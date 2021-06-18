@@ -4,7 +4,6 @@ import {
     Column,
     Unique,
 } from 'typeorm';
-
 @Unique(['description'])
 @Entity('items')
 export default class Item {

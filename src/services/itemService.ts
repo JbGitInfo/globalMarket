@@ -1,4 +1,4 @@
-import { ItemInterface } from "../interfaces/item";
+import  ItemInterface  from "../interfaces/item";
 import Item from "../entities/item"
 import ItemRepository from "../repositories/itemRepository"
 

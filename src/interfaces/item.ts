@@ -1,4 +1,4 @@
-export interface ItemInterface {
+export default interface IItemInterface {
     description: string
     weight: number
     levelRequired: number
