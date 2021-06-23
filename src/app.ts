@@ -10,7 +10,7 @@ class Application {
         this.setupRoutes();
     }
     private setupRoutes() {
-        this.app.use(itemRoutes);
+        this.app.use(itemRoutes); //teste
     }
 }
 
