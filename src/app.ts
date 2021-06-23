@@ -1,8 +1,8 @@
 import express from 'express';
-import itemRoutes from './src/routes/item.routes';
+import itemRoutes from '../src/routes/item.routes';
 import bodyParser from 'body-parser';
 
-class Application{
+class Application {
     public app: express.Application;
     constructor() {
         this.app = express();
@@ -10,9 +10,8 @@ class Application{
         this.setupRoutes();
     }
     private setupRoutes() {
-        this.app.use(itemRoutes)
+        this.app.use(itemRoutes);
     }
-
 }
 
 export default new Application().app;

@@ -1,8 +1,6 @@
 import Item from '../../entities/item';
-import {ItemInterface } from '../item';
+import ItemInterface from '../../interfaces/item';
 
 export default interface IItemRepository {
-    create(
-        itemData: ItemInterface
-    ): Promise<Item>;
+    create(itemData: ItemInterface): Promise<Item>;
 }

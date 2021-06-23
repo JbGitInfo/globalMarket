@@ -1,17 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
-    "emitDecoratorMetadata": true,
-    "lib": [
-      "dom",
-      "es2015.promise",
-      "es5"
-    ]
-  }
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
+        "emitDecoratorMetadata": true,
+        "outDir": "dist",
+        "lib": ["es2019", "es2020"]
+    },
+    "include": ["src/"],
+    "exclude": ["src/tests/**"]
 }
