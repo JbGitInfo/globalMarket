@@ -2,6 +2,8 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import app from './app';
 
+import './containers';
+
 async function start() {
     await createConnection();
     app.listen(3000);

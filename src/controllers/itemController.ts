@@ -7,5 +7,5 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
     const itemService = container.resolve(ItemService);
     const response = await itemService.create(itemData);
 
-    return res.status(201).json(response);
+    return res.status(201).json({ id: response.id });
 };

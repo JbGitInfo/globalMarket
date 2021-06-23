@@ -1,13 +1,13 @@
 import ItemInterface from '../interfaces/item';
 import Item from '../database/entities/item';
-import ItemRepository from '../repositories/itemRepository';
+import IItemRepository from '../interfaces/repositories/IItemRepository';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()
 export default class ItemService {
     constructor(
         @inject('ItemRepository')
-        private itemRepository: ItemRepository,
+        private itemRepository: IItemRepository,
     ) {}
 
     public async create(itemData: ItemInterface): Promise<Item> {
