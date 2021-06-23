@@ -3,8 +3,7 @@ import { container } from 'tsyringe';
 import request from 'supertest';
 import ItemService from '../../services/itemService';
 import ItemBuilder from '../testBuilders/ItemBuilder';
-import ItemInterface from '../../interfaces/item';
-import app from '../../../app';
+import app from '../../app';
 describe('Item Route context', () => {
     const itemData = new ItemBuilder()
         .withDescription('Magic long sword')
