@@ -1,9 +1,4 @@
-import {
-    Entity,
-    PrimaryGeneratedColumn,
-    Column,
-    Unique,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 @Unique(['description'])
 @Entity('items')
 export default class Item {
@@ -16,5 +11,5 @@ export default class Item {
     @Column()
     levelRequired: number;
     @Column()
-    vocation: string
+    vocation: string;
 }

@@ -1,4 +1,4 @@
-import Item from '../../entities/item';
+import Item from '../../database/entities/item';
 import ItemInterface from '../../interfaces/item';
 
 export default interface IItemRepository {

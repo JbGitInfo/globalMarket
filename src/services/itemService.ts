@@ -1,5 +1,5 @@
 import ItemInterface from '../interfaces/item';
-import Item from '../entities/item';
+import Item from '../database/entities/item';
 import ItemRepository from '../repositories/itemRepository';
 import { inject, injectable } from 'tsyringe';
 
