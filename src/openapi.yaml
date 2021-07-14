@@ -1,56 +1,124 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
-  title: TGM - API
-  description: Tibial global market
-  version: 0.0.1
-  contact:
-    name: João Brasil
-    email: joaovictor.brasil1992@gmail.com  
+    title: TGM - API
+    description: Tibial global market
+    termsOfService: http://localhost
+    version: 0.0.1
+    contact:
+        name: João Brasil
+        email: joaovictor.brasil1992@gmail.com
+servers:
+    - url: http://localhost:{port}
+      description: Development Server
+      variables:
+          port:
+              enum:
+                  - '3000'
+              default: '3000'
+          basePath:
+              default: api/v1
 tags:
-  - name: Items    
+    # - name: Items
 paths:
-  /item:
-    post:
-      tags: 
-        - Items
-      description: Item create
-      operationId: postItem
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                description:
-                  type: string
-                weight:
-                  type: number
-                levelRequired:
-                  type: number
-                vocation:
-                  type: number
-      responses:
-        201:
-          description: Created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: number
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                  type: object
-                  properties:
-                    code:
-                      type: integer
-                    message:
-                      type: string
-                    error:
-                      type: string
-
+    # /item:
+    #   post:
+    #     tags:
+    #       - Items
+    #     description: Item create
+    #     operationId: postItem
+    #     requestBody:
+    #       required: true
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: object
+    #             properties:
+    #               description:
+    #                 type: string
+    #               weight:
+    #                 type: number
+    #               levelRequired:
+    #                 type: number
+    #               vocation:
+    #                 type: number
+    #     responses:
+    #       201:
+    #         description: Created
+    #         content:
+    #           application/json:
+    #             schema:
+    #               type: object
+    #               properties:
+    #                 id:
+    #                   type: number
+    #       500:
+    #         description: Internal Server Error
+    #         content:
+    #           application/json:
+    #             schema:
+    #                 type: object
+    #                 properties:
+    #                   code:
+    #                     type: integer
+    #                   message:
+    #                     type: string
+    #                   error:
+    #                     type: string
+    #   get:
+    #     tags:
+    #       - Items
+    #     description: Item getAll
+    #     operationId: getItems
+    #     parameters:
+    #       - in: query
+    #         name: vocation
+    #         required: false
+    #         schema:
+    #           type: string
+    #       - in: query
+    #         name: min_level_required
+    #         required: false
+    #         schema:
+    #           type: number
+    #       - in: query
+    #         name: max_level_required
+    #         required: false
+    #         schema:
+    #           type: number
+    #     responses:
+    #       200:
+    #         description: ""
+    #         content:
+    #           application/json:
+    #             schema:
+    #               type: array
+    #               items:
+    #                 $ref: "#/components/schemas/item"
+    #       500:
+    #         description: Internal Server Error
+    #         content:
+    #           application/json:
+    #             schema:
+    #                 type: object
+    #                 properties:
+    #                   code:
+    #                     type: integer
+    #                   message:
+    #                     type: string
+    #                   error:
+    #                     type: string
+components:
+    schemas:
+        # item:
+        #   type: object
+        #   properties:
+        #     id:
+        #       type: number
+        #     description:
+        #       type: string
+        #     weight:
+        #       type: number
+        #     levelRequired:
+        #       type: string
+        #     vocation:
+        #       type: string

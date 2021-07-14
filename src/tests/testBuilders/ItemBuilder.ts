@@ -1,10 +1,10 @@
-import ItemInterface from '../../interfaces/item';
+import { IItemInterface } from '../../interfaces/item';
 
 export default class ItemBuilder {
-    item: ItemInterface;
+    item: IItemInterface;
 
     constructor() {
-        this.item = {} as ItemInterface;
+        this.item = {} as IItemInterface;
     }
 
     public withDescription(description: string): ItemBuilder {
@@ -20,14 +20,14 @@ export default class ItemBuilder {
     public withLevelRequired(levelRequired: number): ItemBuilder {
         this.item.levelRequired = levelRequired;
         return this;
-    }  
+    }
 
     public withVocation(vocation: string): ItemBuilder {
         this.item.vocation = vocation;
         return this;
     }
 
-    public build(): ItemInterface {
+    public build(): IItemInterface {
         return this.item;
     }
 }

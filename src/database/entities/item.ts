@@ -4,12 +4,28 @@ import { Entity, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 export default class Item {
     @PrimaryGeneratedColumn('uuid')
     id: string;
-    @Column()
+    @Column({
+        nullable: false,
+        length: 300,
+        type: 'varchar',
+    })
     description: string;
-    @Column()
+    @Column({
+        nullable: false,
+        length: 10,
+        type: 'varchar',
+    })
     weight: number;
-    @Column()
+    @Column({
+        nullable: false,
+        length: 10,
+        type: 'varchar',
+    })
     levelRequired: number;
-    @Column()
+    @Column({
+        nullable: false,
+        length: 50,
+        type: 'varchar',
+    })
     vocation: string;
 }

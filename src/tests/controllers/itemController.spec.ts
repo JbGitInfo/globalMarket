@@ -30,4 +30,16 @@ describe('Item Route context', () => {
 
         expect(response.status).toBe(201);
     });
+
+    it.skip('should return 400 status when not sending params when creating the item ', async () => {
+        itemServiceSpy.create.resolves(<any>itemData);
+        sinon.stub(container, 'resolve').returns(itemServiceSpy);
+
+        const response = await request(app)
+            .post('/api/v1/item')
+            .set('Accept', 'application/json');
+
+        expect(response.status).toBe(400);
+        expect(itemServiceSpy.create.notCalled).toBeTruthy();
+    });
 });
